@@ -1,0 +1,36 @@
+[submodule "deps/dpdk"]
+	path = deps/dpdk
+	url = https://github.com/DPDK/dpdk.git
+[submodule "deps/rocksdb"]
+	path = deps/rocksdb
+	url = https://github.com/facebook/rocksdb.git
+[submodule "deps/dune"]
+	path = deps/dune
+	url = https://github.com/project-dune/dune.git
+[submodule "deps/shinjuku_dune"]
+	path = deps/shinjuku_dune
+	url = https://github.com/kkaffes/dune.git
+[submodule "deps/libpg_query"]
+	path = deps/libpg_query
+	url = https://github.com/pganalyze/libpg_query.git
+[submodule "deps/sql-parser"]
+	path = deps/sql-parser
+	url = https://github.com/hyrise/sql-parser.git
+[submodule "deps/resp.rs"]
+	path = deps/resp.rs
+	url = https://github.com/DavidCai1111/resp.rs.git
+[submodule "deps/dpdk-kmods"]
+	path = deps/dpdk-kmods
+	url = https://dpdk.org/git/dpdk-kmods
+[submodule "deps/concord"]
+	path = deps/concord
+	url = https://github.com/dslab-epfl/concord.git
+[submodule "deps/leveldb"]
+	path = deps/leveldb
+	url = https://github.com/google/leveldb.git
+[submodule "deps/--force"]
+	path = deps/--force
+	url = https://github.com/google/leveldb.git
+[submodule "deps/concord_leveldb"]
+	path = deps/concord_leveldb
+	url = git@github.com:berghetti/concord_leveldb.git
