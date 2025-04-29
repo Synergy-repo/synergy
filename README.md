@@ -1,7 +1,7 @@
 
 # synergy
 
-TEST2
+See [all](https://github.com/Synergy-repo/all) repository to run paper experiments.
 
 ## Build library
 ```sh
