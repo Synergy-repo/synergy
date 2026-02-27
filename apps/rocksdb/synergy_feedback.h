@@ -1,0 +1,8 @@
+
+#ifndef synergy_FEEDBACK_H
+#define synergy_FEEDBACK_H
+
+#define synergy_FEEDBACK_ENTRY_do_get synergy_feedback_start_short
+#define synergy_FEEDBACK_EXIT_do_get synergy_feedback_stop_short
+
+#endif

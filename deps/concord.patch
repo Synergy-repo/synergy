@@ -1,0 +1,52 @@
+diff --git a/setup.sh b/setup.sh
+index c7eb052..69d0acd 100755
+--- a/setup.sh
++++ b/setup.sh
+@@ -22,11 +22,11 @@ bash setup-pass.sh
+ popd
+ 
+ # Build Concord lib
+-pushd src/lib
+-make
+-popd
+-
+-# Build Benchmarks
+-pushd benchmarks
+-bash setup.sh
+-popd
+\ No newline at end of file
++#pushd src/lib
++#make
++#popd
++#
++## Build Benchmarks
++#pushd benchmarks
++#bash setup.sh
++#popd
+diff --git a/src/cache-line-pass/src/Concord.cpp b/src/cache-line-pass/src/Concord.cpp
+index 0a083ce..83c4caf 100644
+--- a/src/cache-line-pass/src/Concord.cpp
++++ b/src/cache-line-pass/src/Concord.cpp
+@@ -178,11 +178,10 @@ namespace
+ 
+               int cnt = loopBodyUnrollSize / estimateLoopBodySize(currentLoop, LI);
+ 
+-              UnrollLoopOptions ULO{
+-                .AllowRuntime = true,
+-                .AllowExpensiveTripCount = true,
+-                .UnrollRemainder = true,
+-              };
++              UnrollLoopOptions ULO;
++              ULO.AllowRuntime = true;
++              ULO.AllowExpensiveTripCount = true;
++              ULO.UnrollRemainder = true;
+               ULO.Count = cnt;
+ 
+               AssumptionCache* AC = &getAnalysis<AssumptionCacheTracker>(F).getAssumptionCache(F);
+@@ -371,4 +370,4 @@ static RegisterPass<ConcordPass> Y("yield", "Concord Pass", true, false);
+ static void registerConcordPass(const PassManagerBuilder&, legacy::PassManagerBase& PM)
+ {
+   PM.add(new ConcordPass());
+-}
+\ No newline at end of file
++}

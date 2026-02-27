@@ -1,0 +1,48 @@
+
+CFLAGS_DEBUG=-O0 -ggdb -Wall -Wextra -Wshadow
+CFLAGS_RELEASE=-O3 -DNDEBUG -march=native -Wall -Wextra
+
+ENABLE_DEBUG=n
+
+# All set as 'y' is synergy, all set as 'n' is like pure RSS.
+ENABLE_INTERRUPT=y
+ENABLE_WORKSTEALING=y
+ENABLE_WORKSTEALING_BW=y
+ENABLE_WAIT_QUEUE=y
+ENABLE_CONDITIONAL_INTERRUPT=y
+ENABLE_FEEDBACK=y
+ENABLE_QUANTUM_AUTOMATIC=y
+
+ENABLE_TIMER_WORKER=n
+ENABLE_CFCFS=n
+
+# CONFIG EXAMPLES:
+#   RSS: all set as 'n'
+#   RSS + WS: ENABLE_WORKSTEALING=y
+#   RSS + INTERRUPT: ENABLE_INTERRUPT=y
+#   RSS + WS + INTERRUPT: ENABLE_WORKSTEALING=y ENABLE_INTERRUPT=y
+#
+#   synergy: all set as 'y'
+#   synergy - TIMER_WORKER: ENABLE_TIMER_WORKER=n
+#   synergy - CONDITIONAL_INTERRUPT: ENABLE_CONDITIONAL_INTERRUPT=n
+
+# quantum in microseconds (us).
+# If ENABLE_QUANTUM_AUTOMATIC is 'y', this value is used only as initial value
+# of quantum.
+QUANTUM=5
+QUANTUM_FACTOR=2
+
+# wait queue delay in 'us' to avoid startvation to check congested state.
+# 0 value disable congested verification.
+CONGESTED_THRESH=0
+# this quantum factor is used only when system is in 'congested' state.
+CONGESTED_QUANTUM_FACTOR=10
+
+# method used to suspend workers, options avalible are:
+#   SIGNAL - default POSIX signals
+#   KMOD_IPI - specialized module to send IPIs
+#   UINTR - user level interrupts
+#   CONCORD - concord compiler instrumentation technique
+#
+#   if ENALBE_INTERRUPT=n this not used.
+INTERRUPT_METHOD=CONCORD

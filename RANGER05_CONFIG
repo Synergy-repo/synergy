@@ -1,0 +1,16 @@
+
+# Network interface related confs
+NIC_BIND=false
+NIC_NAME=enp42s0np0
+NIC_PCI=bd:00.0
+
+# used to configure isolcpu on grub.
+# If you not need this, comment this line.
+CPUS_RESERVED=3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63
+CPUS_RESERVED+=67,69,71,73,75,77,79,81,83,85,87,89,91,93,95,97,99,101,103,105,107,109,111,113,115,117,119,121,123,125,127
+
+# cpus used to run app
+CPUS=3,5,7,9,11,13,15,17,19,21,23,25,27,29,31
+
+# NUMA used to setup hugepages
+NUMA_ID=1

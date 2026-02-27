@@ -1,0 +1,11 @@
+
+CONCORD=y
+LLVM_VERSION=9
+CC = clang-$(LLVM_VERSION)
+CXX = clang++-$(LLVM_VERSION)
+OPT = opt-$(LLVM_VERSION)
+LLC = llc-$(LLVM_VERSION)
+CONCORD_PASS=$(ROOT_PATH)/deps/concord/src/cache-line-pass/build/src/libConcordPass.so
+CONCORD_RDTSC_PASS=$(ROOT_PATH)/deps/concord/src/rdtsc-pass/build/src/libConcordPass.so
+PASS_FLAGS=-c -emit-llvm
+OPT_CONFIG=-postdomtree -mem2reg -indvars -loop-simplify -branch-prob -scalar-evolution
