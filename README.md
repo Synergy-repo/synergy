@@ -1,4 +1,7 @@
 
+This work was presented at the [IFIP network 2026](https://networking.ifip.org/2026/).  
+https://dl.ifip.org/db/conf/networking/networking2026/1571259812.pdf
+
 # synergy
 
 See [all](https://github.com/Synergy-repo/all) repository to run paper experiments.
